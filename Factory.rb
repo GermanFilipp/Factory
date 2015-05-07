@@ -15,8 +15,8 @@ class Factory
 
 
       def [](key)
-        instance_variable_get(instance_variables[key]) if key.kind_of?(Integer)
-            self.send(key)
+       return instance_variable_get(instance_variables[key]) if key.kind_of?(Integer)
+       return self.send(key)
       end
       
       yield block if block_given?
