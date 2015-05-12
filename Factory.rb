@@ -19,14 +19,14 @@ class Factory
        return self.send(key)
       end
       
-      yield block if block_given?
+      class_eval block if block_given?
    end
 
 
   end
 end
 Customer = Factory.new(:name,:address,:age) do
-  public
+
   def greeting
     "Hello #{name}!"
   end
