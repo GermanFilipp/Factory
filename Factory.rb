@@ -19,7 +19,7 @@ class Factory
        return self.send(key)
       end
       
-      class_eval block if block_given?
+      class_eval &block if block_given?
    end
 
 
